@@ -1,10 +1,12 @@
 import React from 'react';
+import Title from './title';
 
 export default class Users2 extends React.Component {
 
     shouldComponentUpdate(nextProps) {
 
-        if (this.props.users != nextProps.users) {
+        //if (this.props.users[0] != nextProps.users[0]) { will not update
+        if (this.props.users != nextProps.users) { // will update
             
             return true;
         }
@@ -18,6 +20,7 @@ export default class Users2 extends React.Component {
 
         return(
             <div className='users'>
+                <Title title='users' />
                 <ul>
                     {
                         this.props.users.map((user) => {

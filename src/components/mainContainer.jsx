@@ -6,14 +6,23 @@ import users2 from '../services/users2';
 
 export default class MainContainer extends React.Component {
 
-    state = {
-        toggle: false
-    };
+    constructor(props) {
+
+        super(props);
+
+        this.state = {
+            toggle: false,
+            users2: users2
+        };
+    }
 
     toggle = () => {
 
+        const newUsers = users2.slice(0);
+
         this.setState({
-            toggle: !this.state.toggle
+            toggle: !this.state.toggle,
+            users2: newUsers
         });
     }
 
@@ -31,7 +40,7 @@ export default class MainContainer extends React.Component {
                         <Users />
                     </div>
                     <div style={{float: 'left', display: 'inline-block', padding: '10px', marginLeft: '10px'}}>
-                        <Users2 users={users2} />
+                        <Users2 users={this.state.users2} />
                     </div>
                 </div>
             </div>
