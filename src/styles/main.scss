@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div.users {
+
+    border: 1px solid green;
+    white-space: nowrap;
+
+    ul {
+
+        padding: 0;
+
+        li {
+
+            list-style: none;
+            padding: 5px;
+    
+            &:hover {
+                background-color: beige;
+            }
+        }
+    }
+}

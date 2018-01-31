@@ -3,14 +3,14 @@ import users from '../services/users';
 
 export default class Users extends React.Component {
 
-    shouldComponentUpdate() {
+    // shouldComponentUpdate(nextProps, nextState) {
 
-        return false;
-    }
+    //     return false;
+    // }
 
     render() {
 
-        console.log('Users component rendered!');
+    console.log('Users component rendered');
 
         return(
             <div className='users'>
@@ -18,7 +18,7 @@ export default class Users extends React.Component {
                     {
                         users.map((user) => {
                             return <li key={user.id}>
-                                        {user.firstName + ' ' + user.lastName}
+                                        {user.name}
                                     </li>
                         })
                     }

@@ -1,4 +1,8 @@
 import React from 'react';
+import Users from '../components/users';
+import Users2 from '../components/users2';
+import users from '../services/users';
+import users2 from '../services/users2';
 
 export default class MainContainer extends React.Component {
 
@@ -15,12 +19,21 @@ export default class MainContainer extends React.Component {
 
     render() {
 
+        console.log('MainContainer component rendered');
+
         return(
             <div className='main-container'>
-                <div>
+                <div className='toggle-wrapper'>
                     <button onClick={this.toggle}>toggle</button>
                 </div>
-                {this.props.children}
+                <div>
+                    <div style={{float: 'left', display: 'inline-block', padding: '10px'}}>
+                        <Users />
+                    </div>
+                    <div style={{float: 'left', display: 'inline-block', padding: '10px', marginLeft: '10px'}}>
+                        <Users2 users={users2} />
+                    </div>
+                </div>
             </div>
         );
     }

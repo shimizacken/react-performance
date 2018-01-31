@@ -1,22 +1,26 @@
 import React from 'react';
-import users from '../services/users';
 
-export default class Users extends React.Component {
+export default class Users2 extends React.Component {
 
-    shouldComponentUpdate() {
+    shouldComponentUpdate(nextProps) {
+
+        if (this.props.users != nextProps.users) {
+            
+            return true;
+        }
 
         return false;
     }
 
     render() {
 
-        console.log('Users component rendered!');
+        console.log('Users2 component rendered!');
 
         return(
             <div className='users'>
                 <ul>
                     {
-                        users.map((user) => {
+                        this.props.users.map((user) => {
                             return <li key={user.id}>
                                         {user.firstName + ' ' + user.lastName}
                                     </li>

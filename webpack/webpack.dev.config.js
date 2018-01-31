@@ -61,7 +61,7 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM'
     },*/
-    devtool: 'cheap-source-map',
+    devtool: 'source-map',//'cheap-source-map',
     devServer: {
         contentBase: './',
         hot: true,
